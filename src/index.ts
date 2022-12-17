@@ -91,7 +91,7 @@ class MakeIds {
 			const inputObj: InputObject = inputModule.default;
 			this.createOutputAndCache(inputObj, cacheObj);
 		} else {
-			this.showError("Can't find input file");
+			this.showError(`can not find input file from ${this._inputPath}`);
 			return;
 		}
 	}
@@ -145,7 +145,7 @@ class MakeIds {
 		this.makeOutputIndexFile(outputs);
 		this.makeOutputDeclarationFile(outputs);
 		this.makeCacheFile(outputs);
-		this.showSuccess("Successfully generated ids");
+		this.showSuccess("successfully updated ids");
 	}
 
 	private makeOutputIndexFile(outputs: Array<Output>): void {
@@ -176,11 +176,11 @@ class MakeIds {
 	}
 
 	private showError(message: string): void {
-		console.error(chalk.red(`[Error from element-id] ${message}`));
+		console.error(chalk.red(`[elementid] error - ${message}`));
 	}
 
 	private showSuccess(message: string): void {
-		console.error(chalk.green(`[Success from element-id] ${message}`));
+		console.log(chalk.green(`[elementid] ${message}`));
 	}
 }
 
