@@ -1,0 +1,7 @@
+#node modules
+node_modules/
+
+# output dir
+dist/
+lib/
+.cache/
