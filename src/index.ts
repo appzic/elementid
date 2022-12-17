@@ -111,26 +111,27 @@ class MakeIds {
 			let outputValue: string = "";
 
 			if (hasKeyInCache) {
-				// cache වල අදාල key එක ඇති නම්
+				// if the input key available in the cache
 				const cacheObj = cache[inputKey];
 				const previousInput: string = cacheObj._cache_input_val;
 				const previousOutput: string = cacheObj._cache_output_val;
 
+				// compair the cache and the input values
 				if (previousInput === "" && currentInputValue === "") {
-					// දැන් සහ පසුගිය අවස්ථා දෙකේදීම input empty නම්
+					// if input and cache values are empty
 					outputValue = previousOutput;
 				} else if (previousInput !== "" && currentInputValue === "") {
-					// පසුගිය අවස්ථාවේ යමක් තිබී දැන් input එක empty නම්
+					// if the cache has some value and the input is empty
 					outputValue = getId();
 				} else if (previousInput === "" && currentInputValue !== "") {
-					// පසුගිය අවස්ථාවේ empth වී දැන් input එකක් තිබේ නම්
+					// if the cache value is empty and input has some value
 					outputValue = currentInputValue;
 				} else {
-					// දැන් සහ පසුගිය යන අවස්ථා දෙකේදීම input එකේ යමක් තිබේ නම්
+					// if the input and the chache values are not empty
 					outputValue = currentInputValue;
 				}
 			} else {
-				// cache වල අදාල key එක නැති නම්
+				// if the input key not available in the cache
 				outputValue = currentInputValue === "" ? getId() : currentInputValue;
 			}
 
@@ -144,6 +145,7 @@ class MakeIds {
 		this.makeOutputIndexFile(outputs);
 		this.makeOutputDeclarationFile(outputs);
 		this.makeCacheFile(outputs);
+		this.showSuccess("Successfully generated ids");
 	}
 
 	private makeOutputIndexFile(outputs: Array<Output>): void {
