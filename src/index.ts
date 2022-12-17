@@ -60,7 +60,9 @@ class MakeIds {
 		// waiting for the input changes or straightforward generate outputs
 		if (this._isWatch) {
 			const watcher = chokidar.watch([this._inputPath]);
-			watcher.on("change", this.run);
+			watcher.on("change", () => {
+				this.run();
+			});
 		} else {
 			this.run();
 		}
