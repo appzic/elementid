@@ -4,6 +4,3 @@ node_modules/
 # outputs
 lib/
 dist/
-
-# cache
-.cache/

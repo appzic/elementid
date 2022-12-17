@@ -41,7 +41,10 @@ class MakeIds {
 		const modulePath: string = path.resolve(__dirname, "../");
 
 		this._inputPath = path.resolve(projectPath, config.inputFilePath);
-		this._cachePath = path.resolve(modulePath, "./.cache/__cache__ids.js");
+		this._cachePath = path.resolve(
+			projectPath,
+			"./node_modules/.cache/elementid/__cache__ids.js"
+		);
 		this._outputIndexPath = path.resolve(modulePath, "./dist/index.js");
 		this._outputDPath = path.resolve(modulePath, "./dist/index.d.ts");
 		this._isWatch = config.isWatch;
@@ -64,8 +67,6 @@ class MakeIds {
 	}
 
 	private async run() {
-		console.log("??????????????????? ", this._inputPath);
-
 		const inputModule = await loadModule(this._inputPath);
 		const cacheModule = await loadModule(this._cachePath);
 
