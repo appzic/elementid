@@ -16,7 +16,12 @@
 		"clean": "rimraf ./lib ./dist ./.cache",
 		"format": "prettier --write ."
 	},
-	"keywords": [],
+	"keywords": [
+		"javascript",
+		"typescript",
+		"id-management",
+		"nonoid"
+	],
 	"author": "Yasitha Nadeeshan",
 	"license": "MIT",
 	"devDependencies": {
