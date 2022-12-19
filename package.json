@@ -1,7 +1,7 @@
 {
 	"name": "elementid",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A proper way to manage ids for javascript and typescript projects",
 	"main": "dist/index.js",
 	"bin": {
 		"elementid": "lib/cli.js"
