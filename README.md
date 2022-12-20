@@ -2,6 +2,7 @@
 
 A proper way to manage ids for javascript and typescript projects.
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml?branch=main)
 ![npm](https://img.shields.io/npm/v/elementid)
 ![npm](https://img.shields.io/npm/dw/elementid)
 ![GitHub](https://img.shields.io/github/license/appzic/elementid)
