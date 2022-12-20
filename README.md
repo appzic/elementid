@@ -1,8 +1,29 @@
-### Command-line
+# ElementId
 
+A proper way to manage ids for javascript and typescript projects.
+
+![npm](https://img.shields.io/npm/v/elementid)
+![npm](https://img.shields.io/npm/dw/elementid)
+![GitHub](https://img.shields.io/github/license/appzic/elementid)
+
+## How to install
+
+```bash
+npm i -D elementid
 ```
 
+## Command-line
+
+```
+Usage: elementid <input file> [options]
+
 Options:
-    --version                   show package version number
-    -w, --watch                 watch inputfile forever
+  -w, --watch  Watch changes of input file
+  -f, --force  Generate unique ids without cacheing
+  --version    Show version number
+  -h, --help   Show help
+
+Examples:
+  elementid ids.js                          with the input file
+  elementid src/my_ids.js --watch           with the input file and a option
 ```
