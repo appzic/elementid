@@ -9,8 +9,6 @@ const yarg = yargs
 	)
 	.example("$0 ids.js", "with the input file")
 	.example("$0 src/my_ids.js --watch", "with the input file and a option")
-	.describe("init", "Generate empty input file")
-	.boolean("init")
 	.alias("w", "watch")
 	.describe("w", "Watch changes of input file")
 	.boolean("w")
