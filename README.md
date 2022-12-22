@@ -13,6 +13,8 @@ A proper way to manage ids for javascript and typescript projects.
 npm i -D elementid
 ```
 
+## How to input ids
+
 ## Command-line
 
 ```
