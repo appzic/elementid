@@ -31,8 +31,15 @@ now you can use ids in your javascript or typescript source files
 ```typescript
 import {yellowBtnId, redBtnId, greenBtnId} from "elementid";
 
-const yellowBtn = document.getElementById("yellowBtnId");
+const yellowBtn = document.getElementById(yellowBtnId);
 const redBtn = document.querySelector(`#${redBtnId}`);
+```
+
+```javascript
+const ids = require("elementid");
+
+const yellowBtn = document.getElementById(ids.yellowBtnId);
+const redBtn = document.querySelector(`#${ids.redBtnId}`);
 ```
 
 
