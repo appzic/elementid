@@ -29,6 +29,7 @@ elementid ./my_ids.toml
 ```
 now you can use ids in your javascript or typescript source files 
 ```typescript
+// ES6 syntax
 import {yellowBtnId, redBtnId, greenBtnId} from "elementid";
 
 const yellowBtn = document.getElementById(yellowBtnId);
@@ -36,6 +37,7 @@ const redBtn = document.querySelector(`#${redBtnId}`);
 ```
 
 ```javascript
+// CommonJS syntax
 const ids = require("elementid");
 
 const yellowBtn = document.getElementById(ids.yellowBtnId);
