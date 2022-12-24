@@ -4,6 +4,7 @@ import * as chokidar from "chokidar";
 import loadModule from "./loadModule";
 import writeFile from "./writeFile";
 import getId from "./getId";
+import readToml from "./readFile";
 
 type Output = {
 	key: string;
@@ -68,32 +69,26 @@ class MakeIds {
 		}
 	}
 
-	private async run() {
-		const inputModule = await loadModule(this._inputPath);
-		const cacheModule = await loadModule(this._cachePath);
-
-		if (inputModule) {
-			// find the input module has the default export
-			if (!inputModule.hasOwnProperty("default")) {
-				this.showError("Can't find default export in input file");
-				return;
-			}
-
-			// read cache data
-			const cacheObj: CacheObject = {};
-			if (cacheModule) {
-				if (cacheModule.hasOwnProperty("default")) {
-					Object.assign(cacheObj, cacheModule.default);
-				}
-			}
-
-			// create output and cache data
-			const inputObj: InputObject = inputModule.default;
-			this.createOutputAndCache(inputObj, cacheObj);
-		} else {
-			this.showError(`can not find input file from ${this._inputPath}`);
-			return;
-		}
+	private run() {
+		// load input
+		readToml(this._inputPath)
+			.then((content) => {
+				// load cache
+				loadModule(this._cachePath)
+					.then((cacheModule) => {
+						const cacheObj = {};
+						if (cacheModule.hasOwnProperty("default")) {
+							Object.assign(cacheObj, cacheModule.default);
+						}
+						this.createOutputAndCache(content, cacheObj);
+					})
+					.catch(() => {
+						this.createOutputAndCache(content, {});
+					});
+			})
+			.catch((errorMessage) => {
+				this.showError(errorMessage);
+			});
 	}
 
 	// create the output files and the cache file
@@ -176,7 +171,7 @@ class MakeIds {
 	}
 
 	private showError(message: string): void {
-		console.error(chalk.red(`[elementid] error - ${message}`));
+		console.error(chalk.red(`[elementid] ${message}`));
 	}
 
 	private showSuccess(message: string): void {
