@@ -3,8 +3,8 @@
 <p align="center">
     <p align="center">Smart way to manage ids for javascript and typescript projects.</p>
     <p align="center" style="align: center;">
-        <a href="https://github.com/appzic/elementid/LICENSE">
-            <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid/">
+        <a href="https://github.com/appzic/elementid/blob/main/LICENSE">
+            <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid">
         </a>
     </p>
 </p>
