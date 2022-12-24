@@ -24,7 +24,7 @@ npm i -D elementid
 
 ### Create Input File
 
-First, you declare your project IDs in ".toml" format. The **ElementID** can generates two types of id values.
+First, you declare your project IDs in `.toml` format. The **ElementID** can generates two types of id values.
 
 - **Unique values** - If you want a unique value for your declared id, you should assign an empty string("") for it.
 
