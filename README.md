@@ -1,6 +1,13 @@
 # ElementID
 
-Smart way to manage ids for javascript and typescript projects.
+<p align="center">
+    <p align="center">Smart way to manage ids for javascript and typescript projects.</p>
+    <p align="center" style="align: center;">
+        <a href="https://github.com/appzic/elementid/LICENSE">
+            <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid/">
+        </a>
+    </p>
+</p>
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml?branch=main)
 ![npm](https://img.shields.io/npm/v/elementid)
@@ -78,3 +85,11 @@ Examples:
   elementid ids.js                          with the input file
   elementid src/my_ids.js --watch           with the input file and a option
 ```
+
+## Contributing
+
+If you want to open a issue, create a Pull Request or simply want to know how you can run it on your local machine, please read the [Contributing guide](./CONTRIBUTING.md).
+
+## License
+
+MIT
