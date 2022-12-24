@@ -15,38 +15,51 @@ npm i -D elementid
 
 ## How to use
 
-create `.toml` file for input ids. For example your can create `my_ids.toml` in root of the project directory
+### Create Input File
+
+First, you declare your project IDs in ".toml" format. The **ElementID** can generates two types of id values.
+
+- **Unique values** - If you want a unique value for your declared id, you should assign an empty string("") for it.
 
 ```toml
-# unique ids
 yellowBtnId = ""
 redBtnId = ""
-
-# custom id
-greenBtnId = "mycustomid"
 ```
 
-use following commond to generate ids
+- **Custom values** - If you want a custom value for your declared id, you should assign your custom value for it.
+
+```toml
+greenBtnId = "my_custom_value_1"
+blueBtnId = "my_custom_value_2"
+```
+
+### Generate
+
+The ElementID has a powerful CLI tool for generating IDs according to your input. If your input file path is `./my_ids.toml`, you can use the following command to generate IDs.
 
 ```
 elementid ./my_ids.toml
 ```
 
-now you can use ids in your javascript or typescript source files
+Please read the [command line section](#command-line) for more CLI options.
+
+### Implementation
+
+The ElementID generates a javascript(.js) and a type declaration(.d.ts) files in `node_modeules/elementid/dist/` directory. you can use them as followings.
 
 ```typescript
 // ES6 syntax
 import { yellowBtnId, redBtnId, greenBtnId } from "elementid";
 
 const yellowBtn = document.getElementById(yellowBtnId);
-const redBtn = document.querySelector(`#${redBtnId}`);
+const redBtn = document.querySelector(`#${greenBtnId}`);
 ```
 
 ```javascript
 // CommonJS syntax
 const ids = require("elementid");
 
-const yellowBtn = document.getElementById(ids.yellowBtnId);
+const yellowBtn = document.getElementById(ids.blueBtnId);
 const redBtn = document.querySelector(`#${ids.redBtnId}`);
 ```
 
