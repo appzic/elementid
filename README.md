@@ -1,4 +1,4 @@
-# ElementId
+# ElementID
 
 A proper way to manage ids for javascript and typescript projects.
 
@@ -14,7 +14,9 @@ npm i -D elementid
 ```
 
 ## How to use
+
 create `.toml` file for input ids. For example your can create `my_ids.toml` in root of the project directory
+
 ```toml
 # unique ids
 yellowBtnId = ""
@@ -23,14 +25,18 @@ redBtnId = ""
 # custom id
 greenBtnId = "mycustomid"
 ```
+
 use following commond to generate ids
+
 ```
 elementid ./my_ids.toml
 ```
-now you can use ids in your javascript or typescript source files 
+
+now you can use ids in your javascript or typescript source files
+
 ```typescript
 // ES6 syntax
-import {yellowBtnId, redBtnId, greenBtnId} from "elementid";
+import { yellowBtnId, redBtnId, greenBtnId } from "elementid";
 
 const yellowBtn = document.getElementById(yellowBtnId);
 const redBtn = document.querySelector(`#${redBtnId}`);
@@ -43,7 +49,6 @@ const ids = require("elementid");
 const yellowBtn = document.getElementById(ids.yellowBtnId);
 const redBtn = document.querySelector(`#${ids.redBtnId}`);
 ```
-
 
 ## Command-line
 

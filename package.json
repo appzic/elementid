@@ -1,6 +1,6 @@
 {
-	"name": "ElementId",
-	"version": "0.1.0",
+	"name": "elementid",
+	"version": "0.0.0",
 	"description": "Smart way to manage ids for javascript and typescript projects",
 	"main": "dist/index.js",
 	"bin": {
@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/appzic/ElementId.git"
+		"url": "https://github.com/appzic/elementid.git"
 	},
 	"scripts": {
 		"dev": "tsc --watch",
