@@ -1,6 +1,6 @@
 <p align="center">
     <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209457262-c83c8970-6641-40c1-9579-fc6ab4736397.png"/>
-    <p align="center">Smart way to manage ids for forntend javascript and typescript projects.</p>
+    <h2 align="center">Smart way to manage ids for forntend javascript and typescript projects.</h2>
     <p align="center" style="align: center;">
         <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
             <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
@@ -38,7 +38,7 @@
 - :muscle: Generate unique IDs with powerful the [nanoid](https://github.com/ai/nanoid) generator
 - :eyes: Auto generate with watch mode
 - :minidisc: Static unique values using caching
-- :computer: powerful CLI tool
+- :computer: Powerful CLI tool
 - :scroll: Simple input configuration with .toml
 
 ## How to install
@@ -66,6 +66,8 @@ redBtnId = ""
 greenBtnId = "my_custom_value_1"
 blueBtnId = "my_custom_value_2"
 ```
+
+we recommend the [Even Better TOML extension](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) for VS Code users to create the .toml file
 
 ### Generate
 
