@@ -20,15 +20,22 @@
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
 - [Features](#features)
-- [How to install](#how-to-install)
-- [How to use](#how-to-use)
+- [Get Started](#get-started)
+  - [How to install](#how-to-install)
   - [Create Input File](#create-input-file)
   - [Generate](#generate)
   - [Implementation](#implementation)
 - [Command-line](#command-line)
+- [Use Cases](#use-cases)
+  - [With Astro component](#with-astro-component)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Introduction
+
+ElementID is an ID management tool for your frontend Nodejs (javascript or typescript) projects. You can share id values between different modules using ElementID without any conflict. ElementID is a dev dependency. It provides unique or custom values to your production build according to the input IDs. ElementID has a caching system that helps to make id values static.
 
 ## Features
 
@@ -41,13 +48,15 @@
 - :computer: Powerful CLI tool
 - :scroll: Simple input configuration with .toml
 
-## How to install
+## Get Started
+
+### How to install
+
+We recommend installing ElementID as a dev dependency
 
 ```bash
 npm i -D elementid
 ```
-
-## How to use
 
 ### Create Input File
 
@@ -113,6 +122,42 @@ Options:
 Examples:
   elementid ids.js                          with the input file
   elementid src/my_ids.js --watch           with the input file and a option
+```
+
+## Use Cases
+
+### With Astro component
+
+[Astro](https://astro.build/) is a static site generator. Astro has it has own component to build a static site. Astro component has four sections to generate HTML, CSS, and Javascript. [Read more about astro components](https://docs.astro.build/en/core-concepts/astro-components/).
+
+- HTML content helper
+- HTML content
+- Scripts
+- Styles
+
+If you want to make a dynamic web page with Astro, you need to get access to the DOM elements. [getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) is a popular method to get access to the DOM elements from javascript. But in Astro, you can not share the same id between HTML content and Script sections.
+
+You can hardcode ID values in HTML content and Script sections. But it is not a good idea because these values can be spelling errors, and can conflict with each other.
+
+The ElementID helps you to solve this problem. You can access the same id values with ElementID in the HTML content helper section and Script sections. Check out the following example for how to use ElementID in [Astro](https://astro.build/).
+
+```astro
+---
+import { myBtnId } from "elementid";
+---
+
+<div>
+    <button id={myBtnId}>Click ME!</button>
+</div>
+
+<script>
+    import { myBtnId } from "elementid";
+
+    myBtn = document.getElementById(myBtnId);
+    myBtn.addeventlistener("click",()=>{
+        console.log("click my button");
+    });
+</script>
 ```
 
 ## Contributing
