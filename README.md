@@ -1,6 +1,6 @@
 <p align="center">
     <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209457262-c83c8970-6641-40c1-9579-fc6ab4736397.png"/>
-    <b align="center">Smart way to manage ids for forntend javascript and typescript projects.</b>
+    <b align="center">Smart way to manage IDs for frontend Javascript and Typescript projects.</b>
     <p align="center" style="align: center;">
         <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
             <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
@@ -17,40 +17,40 @@
     </p>
 </p>
 
-## Table of contents
+## Table of Contents
 
-- [Table of contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Features](#features)
-- [Get Started](#get-started)
-  - [How to install](#how-to-install)
-  - [Create Input File](#create-input-file)
-  - [Generate](#generate)
-  - [Implementation](#implementation)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Create TOML File](#create-toml-file)
+  - [Generate IDs](#generate-ids)
+  - [Implementing IDs](#implementing-ids)
 - [Command-line](#command-line)
 - [Use Cases](#use-cases)
-  - [With Astro component](#with-astro-component)
+  - [With Astro component](#integrate-with-astro)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
 
-ElementID is an ID management tool for your frontend Nodejs (javascript or typescript) projects. You can share id values between different modules using ElementID without any conflict. ElementID is a dev dependency. It provides unique or custom values to your production build according to the input IDs. ElementID has a caching system that helps to make id values static.
+ElementID is an ID management tool for your frontend Nodejs (Javascript or Typescript) projects. You can share ID values between different modules using ElementID without any conflict. ElementID is a dev dependency. It provides unique or custom values to your production build according to the input IDs. ElementID has a caching system that helps to make ID values static.
 
 ## Features
 
-- :crossed_swords: No IDs conflict anymore
+- :crossed_swords: No ID conflicts
 - :tada: Zero dependencies in production
 - :chart_with_upwards_trend: Increase your productivity
-- :muscle: Generate unique IDs with powerful the [nanoid](https://github.com/ai/nanoid) generator
+- :muscle: Generate unique IDs with the powerful [nanoid](https://github.com/ai/nanoid) generator
 - :eyes: Auto generate with watch mode
-- :minidisc: Static unique values using caching
+- :minidisc: Cache static unique values
 - :computer: Powerful CLI tool
 - :scroll: Simple input configuration with .toml
 
-## Get Started
+## Getting Started
 
-### How to install
+### Installation
 
 We recommend installing ElementID as a dev dependency
 
@@ -58,27 +58,27 @@ We recommend installing ElementID as a dev dependency
 npm i -D elementid
 ```
 
-### Create Input File
+### Create TOML file
 
-First, you declare your project IDs in `.toml` format. The **ElementID** can generates two types of id values.
+Declare your project IDs in `.toml` format. We recommend the [Even Better TOML extension](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) for VS Code users to create the .toml file.
 
-- **Unique values** - If you want a unique value for your declared id, you should assign an empty string ("") for it.
+The **ElementID** can generate two types of ID values.
+
+- **Unique values** - To generate a unique value for your declared ID, set the value in your toml file to an empty string ("").
 
 ```toml
 yellowBtnId = ""
 redBtnId = ""
 ```
 
-- **Custom values** - If you want a custom value for your declared id, you should assign your custom value for it.
+- **Custom values** - Provide any custom ID values as usual.
 
 ```toml
 greenBtnId = "my_custom_value_1"
 blueBtnId = "my_custom_value_2"
 ```
 
-we recommend the [Even Better TOML extension](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) for VS Code users to create the .toml file
-
-### Generate
+### Generate IDs
 
 The ElementID has a powerful CLI tool for generating IDs according to your input. If your input file path is `./my_ids.toml`, you can use the following command to generate IDs.
 
@@ -88,11 +88,13 @@ elementid ./my_ids.toml
 
 Please read the [command line section](#command-line) for more CLI options.
 
-### Implementation
+### Implementing IDs
 
-The ElementID generates a javascript(.js) and a type declaration(.d.ts) files in `node_modeules/elementid/dist/` directory. you can use them as followings.
+The ElementID generates Javascript(.js) and type declaration(.d.ts) files in the `node_modeules/elementid/dist/` directory. 
 
-```typescript
+Usage example:
+
+```Typescript
 // ES6 syntax
 import { yellowBtnId, redBtnId, greenBtnId } from "elementid";
 
@@ -100,7 +102,7 @@ const yellowBtn = document.getElementById(yellowBtnId);
 const redBtn = document.querySelector(`#${greenBtnId}`);
 ```
 
-```javascript
+```Javascript
 // CommonJS syntax
 const ids = require("elementid");
 
@@ -115,34 +117,34 @@ Usage: elementid <input file> [options]
 
 Options:
   -w, --watch       Watch changes of input file                            [boolean]
-  -f, --force       Generate unique ids without cacheing                   [boolean]
-  -l, --length      Length of the unique id values
+  -f, --force       Generate unique IDs without caching                   [boolean]
+  -l, --length      Specify length of generated unique IDs
                     (default = 8, options = 5, 6, 7, 8, 9, 10)              [number]
   --version         Show version number                                    [boolean]
   -h, --help        Show help                                              [boolean]
 
 Examples:
-  elementid ids.js                      with the input file
-  elementid ids.js --length=7           with the input file and length option
-  elementid src/my_ids.js --watch       with the input file and watch option
+  elementid ids.js                      Default usage without additional options
+  elementid ids.js --length=7           Sets the length of generated IDs to 7
+  elementid src/my_ids.js --watch       Uses the watch option
 ```
 
 ## Use Cases
 
-### With Astro component
+### Integrate With Astro
 
-[Astro](https://astro.build/) is a static site generator. Astro has it has own component to build a static site. Astro component has four sections to generate HTML, CSS, and Javascript. [Read more about astro components](https://docs.astro.build/en/core-concepts/astro-components/).
+[Astro](https://astro.build/) is a static site generator. Astro has its own component to build a static site. There are four sections to generate HTML, CSS, and Javascript. [Read more about Astro components](https://docs.astro.build/en/core-concepts/astro-components/).
 
 - HTML content helper
 - HTML content
 - Scripts
 - Styles
 
-If you want to make a dynamic web page with Astro, you need to get access to the DOM elements. [getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) is a popular method to get access to the DOM elements from javascript. But in Astro, you can not share the same id between HTML content and Script sections.
+Making a dynamic web page with Astro requires access to the DOM elements. The function [getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) is a popular method to get access to the DOM elements from Javascript. However, Astro does not allow the same ID to be used in both the HTML content and Script sections.
 
-You can hardcode ID values in HTML content and Script sections. But it is not a good idea because these values can be spelling errors, and can conflict with each other.
+While hardcoding ID values is an option, this strategy presents an increased opportunity for developer error and conflicts.
 
-The ElementID helps you to solve this problem. You can access the same id values with ElementID in the HTML content helper section and Script sections. Check out the following example for how to use ElementID in [Astro](https://astro.build/).
+ElementID helps you to solve this problem. You can access the same ID values with ElementID in the HTML content helper section and Script sections. Check out the following example for how to use ElementID in [Astro](https://astro.build/).
 
 ```astro
 ---
@@ -165,7 +167,7 @@ import { myBtnId } from "elementid";
 
 ## Contributing
 
-If you want to open a issue, create a Pull Request or simply want to know how you can run it on your local machine, please read the [Contributing guide](https://github.com/appzic/elementid/blob/main/CONTRIBUTING.md).
+If you want to open an issue, create a Pull Request, or simply want to know how you can run it on your local machine, please read the [Contributing Guide](https://github.com/appzic/elementid/blob/main/CONTRIBUTING.md).
 
 ## License
 
