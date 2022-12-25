@@ -27,6 +27,7 @@ type Config = {
 	inputFilePath: string;
 	isWatch: boolean;
 	isForce: boolean;
+	length: number;
 };
 
 class MakeIds {
@@ -36,6 +37,7 @@ class MakeIds {
 	private _outputDPath: string;
 	private _isWatch: boolean;
 	private _isForce: boolean;
+	private _length: number;
 
 	constructor(config: Config) {
 		const projectPath: string = process.cwd();
@@ -50,6 +52,7 @@ class MakeIds {
 		this._outputDPath = path.resolve(modulePath, "./dist/index.d.ts");
 		this._isWatch = config.isWatch;
 		this._isForce = config.isForce;
+		this._length = config.length;
 	}
 
 	async start() {
@@ -117,7 +120,7 @@ class MakeIds {
 					outputValue = previousOutput;
 				} else if (previousInput !== "" && currentInputValue === "") {
 					// if the cache has some value and the input is empty
-					outputValue = getId();
+					outputValue = getId(this._length);
 				} else if (previousInput === "" && currentInputValue !== "") {
 					// if the cache value is empty and input has some value
 					outputValue = currentInputValue;
@@ -127,7 +130,8 @@ class MakeIds {
 				}
 			} else {
 				// if the input key not available in the cache
-				outputValue = currentInputValue === "" ? getId() : currentInputValue;
+				outputValue =
+					currentInputValue === "" ? getId(this._length) : currentInputValue;
 			}
 
 			return {

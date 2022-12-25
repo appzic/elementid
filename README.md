@@ -114,14 +114,17 @@ const redBtn = document.querySelector(`#${ids.redBtnId}`);
 Usage: elementid <input file> [options]
 
 Options:
-  -w, --watch  Watch changes of input file
-  -f, --force  Generate unique ids without cacheing
-  --version    Show version number
-  -h, --help   Show help
+  -w, --watch       Watch changes of input file                            [boolean]
+  -f, --force       Generate unique ids without cacheing                   [boolean]
+  -l, --length      Length of the unique id values
+                    (default = 8, options = 5, 6, 7, 8, 9, 10)              [number]
+  --version         Show version number                                    [boolean]
+  -h, --help        Show help                                              [boolean]
 
 Examples:
-  elementid ids.js                          with the input file
-  elementid src/my_ids.js --watch           with the input file and a option
+  elementid ids.js                      with the input file
+  elementid ids.js --length=7           with the input file and length option
+  elementid src/my_ids.js --watch       with the input file and watch option
 ```
 
 ## Use Cases
