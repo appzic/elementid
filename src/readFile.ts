@@ -1,7 +1,9 @@
 import fs from "fs";
 import toml from "toml";
 
-const readToml = (filePath: string): Promise<{ [key: string]: string }> => {
+export const readToml = (
+	filePath: string
+): Promise<{ [key: string]: string }> => {
 	return new Promise((reslove, reject) => {
 		const rawData = fs.readFileSync(filePath);
 		const content: { [key: string]: string } = toml.parse(rawData.toString());
@@ -19,4 +21,10 @@ const readToml = (filePath: string): Promise<{ [key: string]: string }> => {
 	});
 };
 
-export default readToml;
+export const readJson = (filePath: string): Promise<IdCache> => {
+	return new Promise((reslove, reject) => {
+		const rawData: Buffer = fs.readFileSync(filePath);
+		const obj: IdCache = JSON.parse(rawData.toString());
+		reslove(obj);
+	});
+};

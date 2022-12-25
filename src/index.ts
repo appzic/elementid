@@ -1,34 +1,9 @@
 import path from "path";
 import chalk from "chalk";
 import * as chokidar from "chokidar";
-import loadModule from "./loadModule";
 import writeFile from "./writeFile";
 import getId from "./getId";
-import readToml from "./readFile";
-
-type Output = {
-	key: string;
-	inputValue: string;
-	outputValue: string;
-};
-
-type InputObject = {
-	[key: string]: string;
-};
-
-type CacheObject = {
-	[key: string]: {
-		_cache_input_val: string;
-		_cache_output_val: string;
-	};
-};
-
-type Config = {
-	inputFilePath: string;
-	isWatch: boolean;
-	isForce: boolean;
-	length: number;
-};
+import { readToml, readJson } from "./readFile";
 
 class MakeIds {
 	private _inputPath: string;
@@ -46,7 +21,7 @@ class MakeIds {
 		this._inputPath = path.resolve(projectPath, config.inputFilePath);
 		this._cachePath = path.resolve(
 			projectPath,
-			"./node_modules/.cache/elementid/__cache__ids.js"
+			"./node_modules/.cache/elementid/cache_data.json"
 		);
 		this._outputIndexPath = path.resolve(modulePath, "./dist/index.js");
 		this._outputDPath = path.resolve(modulePath, "./dist/index.d.ts");
@@ -58,7 +33,7 @@ class MakeIds {
 	async start() {
 		// clear the cache file
 		if (this._isForce) {
-			writeFile(this._cachePath, "");
+			this.clearCache();
 		}
 
 		// waiting for the input changes or straightforward generate outputs
@@ -77,16 +52,18 @@ class MakeIds {
 		readToml(this._inputPath)
 			.then((content) => {
 				// load cache
-				loadModule(this._cachePath)
-					.then((cacheModule) => {
-						const cacheObj = {};
-						if (cacheModule.hasOwnProperty("default")) {
-							Object.assign(cacheObj, cacheModule.default);
+				readJson(this._cachePath)
+					.then(({ data, length }) => {
+						let cacheData = data;
+						// if cache length and input length not equal
+						if (length !== this._length) {
+							this.clearCache();
+							cacheData = [];
 						}
-						this.createOutputAndCache(content, cacheObj);
+						this.createOutputAndCache(content, cacheData);
 					})
 					.catch(() => {
-						this.createOutputAndCache(content, {});
+						this.createOutputAndCache(content, []);
 					});
 			})
 			.catch((errorMessage) => {
@@ -95,9 +72,12 @@ class MakeIds {
 	}
 
 	// create the output files and the cache file
-	private createOutputAndCache(input: InputObject, cache: CacheObject): void {
+	private createOutputAndCache(
+		input: InputObject,
+		cache: Array<CacheData>
+	): void {
 		const inputKeys: Array<string> = Object.keys(input);
-		const cacheKeys: Array<string> = Object.keys(cache);
+		const cacheKeys: Array<string> = cache.map((obj) => obj.key);
 
 		// convert the cache keys to string
 		const cacheKeysStr: string = cacheKeys.join(", ");
@@ -110,23 +90,25 @@ class MakeIds {
 
 			if (hasKeyInCache) {
 				// if the input key available in the cache
-				const cacheObj = cache[inputKey];
-				const previousInput: string = cacheObj._cache_input_val;
-				const previousOutput: string = cacheObj._cache_output_val;
+				const cacheObj = cache.find((obj) => inputKey === obj.key);
+				if (cacheObj !== undefined) {
+					const previousInput: string = cacheObj.inputValue;
+					const previousOutput: string = cacheObj.outputValue;
 
-				// compair the cache and the input values
-				if (previousInput === "" && currentInputValue === "") {
-					// if input and cache values are empty
-					outputValue = previousOutput;
-				} else if (previousInput !== "" && currentInputValue === "") {
-					// if the cache has some value and the input is empty
-					outputValue = getId(this._length);
-				} else if (previousInput === "" && currentInputValue !== "") {
-					// if the cache value is empty and input has some value
-					outputValue = currentInputValue;
-				} else {
-					// if the input and the chache values are not empty
-					outputValue = currentInputValue;
+					// compair the cache and the input values
+					if (previousInput === "" && currentInputValue === "") {
+						// if input and cache values are empty
+						outputValue = previousOutput;
+					} else if (previousInput !== "" && currentInputValue === "") {
+						// if the cache has some value and the input is empty
+						outputValue = getId(this._length);
+					} else if (previousInput === "" && currentInputValue !== "") {
+						// if the cache value is empty and input has some value
+						outputValue = currentInputValue;
+					} else {
+						// if the input and the chache values are not empty
+						outputValue = currentInputValue;
+					}
 				}
 			} else {
 				// if the input key not available in the cache
@@ -162,16 +144,16 @@ class MakeIds {
 	}
 
 	private makeCacheFile(outputs: Array<Output>): void {
-		const keyInputValue: string = "_cache_input_val";
-		const keyOutputValue: string = "_cache_output_val";
-		const sumContent: string = outputs
-			.map(
-				(item) =>
-					`    ${item.key}: { ${keyInputValue}: "${item.inputValue}", ${keyOutputValue}: "${item.outputValue}" },`
-			)
-			.join("\n");
-		const content: string = `module.exports = {\n${sumContent}\n};`;
+		const cacheObj: IdCache = {
+			data: outputs,
+			length: this._length,
+		};
+		const content: string = JSON.stringify(cacheObj);
 		writeFile(this._cachePath, content);
+	}
+
+	private clearCache(): void {
+		writeFile(this._cachePath, "");
 	}
 
 	private showError(message: string): void {
