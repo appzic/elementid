@@ -1,6 +1,6 @@
 <p align="center">
     <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209457262-c83c8970-6641-40c1-9579-fc6ab4736397.png"/>
-    <p align="center">Smart way to manage ids for javascript and typescript projects.</p>
+    <p align="center">Smart way to manage ids for forntend javascript and typescript projects.</p>
     <p align="center" style="align: center;">
         <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
             <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
@@ -12,7 +12,7 @@
             <img alt="npm" src="https://img.shields.io/npm/dw/elementid">
         </a>
         <a href="https://github.com/appzic/elementid/LICENSE">
-            <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid/">
+            <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid">
         </a>
     </p>
 </p>
@@ -32,8 +32,14 @@
 
 ## Features
 
+- :crossed_swords: No IDs conflict anymore
+- :tada: Zero dependencies in production
+- :chart_with_upwards_trend: Increase your productivity
 - :muscle: Generate unique IDs with powerful the [nanoid](https://github.com/ai/nanoid) generator
 - :eyes: Auto generate with watch mode
+- :minidisc: Static unique values using caching
+- :computer: powerful CLI tool
+- :scroll: Simple input configuration with .toml
 
 ## How to install
 

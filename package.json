@@ -1,7 +1,7 @@
 {
 	"name": "elementid",
 	"version": "0.0.0",
-	"description": "Smart way to manage ids for javascript and typescript projects",
+	"description": "Smart way to manage ids for frontend javascript and typescript projects",
 	"main": "dist/index.js",
 	"bin": {
 		"elementid": "lib/cli.js"
@@ -17,10 +17,19 @@
 		"format": "prettier --write ."
 	},
 	"keywords": [
-		"javascript",
-		"typescript",
-		"id-management",
-		"nonoid"
+        "javascript ",
+        "cli",
+        "toml",
+        "typescript",
+        "frontend",
+        "command-line",
+        "frontend-web",
+        "watch",
+        "devdependency",
+        "zero-dependency",
+        "command-line-tool",
+        "nanoid",
+        "id-management" 
 	],
 	"author": "Yasitha Nadeeshan",
 	"license": "MIT",
