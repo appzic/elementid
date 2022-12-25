@@ -26,10 +26,10 @@
   - [Installation](#installation)
   - [Create TOML File](#create-toml-file)
   - [Generate IDs](#generate-ids)
-  - [Implementing IDs](#implementing-ids)
+  - [Implement IDs](#implement-ids)
 - [Command-line](#command-line)
 - [Use Cases](#use-cases)
-  - [With Astro component](#integrate-with-astro)
+  - [Astro](#astro)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -88,7 +88,7 @@ elementid ./my_ids.toml
 
 Please read the [command line section](#command-line) for more CLI options.
 
-### Implementing IDs
+### Implement IDs
 
 The ElementID generates Javascript(.js) and type declaration(.d.ts) files in the `node_modeules/elementid/dist/` directory. 
 
@@ -131,7 +131,7 @@ Examples:
 
 ## Use Cases
 
-### Integrate With Astro
+### Astro
 
 [Astro](https://astro.build/) is a static site generator. Astro has its own component to build a static site. There are four sections to generate HTML, CSS, and Javascript. [Read more about Astro components](https://docs.astro.build/en/core-concepts/astro-components/).
 
