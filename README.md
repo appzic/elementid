@@ -169,6 +169,12 @@ import { myBtnId } from "elementid";
 
 If you want to open an issue, create a Pull Request, or simply want to know how you can run it on your local machine, please read the [Contributing Guide](https://github.com/appzic/elementid/blob/main/CONTRIBUTING.md).
 
+## Contributors
+
+<a href="https://github.com/appzic/elementid/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=appzic/elementid" />
+</a>
+
 ## License
 
 ElementID is [MIT](https://github.com/appzic/elementid/blob/main/LICENSE) licensed.
