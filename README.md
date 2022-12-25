@@ -1,18 +1,38 @@
-# ElementID
-
 <p align="center">
     <p align="center">Smart way to manage ids for javascript and typescript projects.</p>
     <p align="center" style="align: center;">
+        <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
+            <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
+        </a>
+        <a href="https://www.npmjs.com/package/elementid">
+            <img alt="npm" src="https://img.shields.io/npm/v/elementid">
+        </a>
+        <a href="https://www.npmjs.com/package/elementid">
+            <img alt="npm" src="https://img.shields.io/npm/dw/elementid">
+        </a>
         <a href="https://github.com/appzic/elementid/LICENSE">
             <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid/">
         </a>
     </p>
 </p>
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml?branch=main)
-![npm](https://img.shields.io/npm/v/elementid)
-![npm](https://img.shields.io/npm/dw/elementid)
-![GitHub](https://img.shields.io/github/license/appzic/elementid)
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [Features](#features)
+- [How to install](#how-to-install)
+- [How to use](#how-to-use)
+  - [Create Input File](#create-input-file)
+  - [Generate](#generate)
+  - [Implementation](#implementation)
+- [Command-line](#command-line)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- :muscle: Generate unique IDs with powerful the [nanoid](https://github.com/ai/nanoid) generator
+- :eyes: Auto generate with watch mode
 
 ## How to install
 
@@ -26,7 +46,7 @@ npm i -D elementid
 
 First, you declare your project IDs in ".toml" format. The **ElementID** can generates two types of id values.
 
-- **Unique values** - If you want a unique value for your declared id, you should assign an empty string("") for it.
+- **Unique values** - If you want a unique value for your declared id, you should assign an empty string ("") for it.
 
 ```toml
 yellowBtnId = ""
@@ -88,8 +108,8 @@ Examples:
 
 ## Contributing
 
-If you want to open a issue, create a Pull Request or simply want to know how you can run it on your local machine, please read the [Contributing guide](./CONTRIBUTING.md).
+If you want to open a issue, create a Pull Request or simply want to know how you can run it on your local machine, please read the [Contributing guide](https://github.com/appzic/elementid/blob/main/CONTRIBUTING.md).
 
 ## License
 
-MIT
+ElementID is [MIT](https://github.com/appzic/elementid/blob/main/LICENSE) licensed.
