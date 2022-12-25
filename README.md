@@ -165,11 +165,11 @@ import { myBtnId } from "elementid";
 </script>
 ```
 
-## Contributing
+## 🙏 Contributing
 
 If you want to open an issue, create a Pull Request, or simply want to know how you can run it on your local machine, please read the [Contributing Guide](https://github.com/appzic/elementid/blob/main/CONTRIBUTING.md).
 
-## Contributors
+## ❤️ Contributors
 
 <a href="https://github.com/appzic/elementid/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=appzic/elementid" />
