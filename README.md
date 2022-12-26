@@ -33,11 +33,11 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Introduction
+## :sunny: Introduction
 
 ElementID is an ID management tool for your frontend Nodejs (Javascript or Typescript) projects. You can share ID values between different modules using ElementID without any conflict. ElementID is a dev dependency. It provides unique or custom values to your production build according to the input IDs. ElementID has a caching system that helps to make ID values static.
 
-## Features
+## :fire: Features
 
 - :crossed_swords: No ID conflicts
 - :tada: Zero dependencies in production
@@ -129,7 +129,7 @@ Examples:
   elementid src/my_ids.js --watch       Uses the watch option
 ```
 
-## Use Cases
+## :magic_wand: Use Cases
 
 ### Astro
 
