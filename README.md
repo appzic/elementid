@@ -17,28 +17,28 @@
     </p>
 </p>
 
-## :book: Table of Contents
+## 📖 Table of Contents
 
-- [:book: Table of Contents](#book-table-of-contents)
-- [:sunny: Introduction](#sunny-introduction)
-- [:fire: Features](#fire-features)
-- [:rocket: Getting Started](#rocket-getting-started)
+- [📖 Table of Contents](#-table-of-contents)
+- [☀️ Introduction](#️-introduction)
+- [🔥 Features](#-features)
+- [🚀 Getting Started](#-getting-started)
   - [Installation](#installation)
   - [Create TOML file](#create-toml-file)
   - [Generate IDs](#generate-ids)
   - [Implement IDs](#implement-ids)
-- [:computer: Command-line](#computer-command-line)
-- [:rainbow: Use Cases](#rainbow-use-cases)
+- [💻 Command-line](#-command-line)
+- [🌈 Use Cases](#-use-cases)
   - [Astro](#astro)
 - [🙏 Contributing](#-contributing)
 - [❤️ Contributors](#️-contributors)
-- [:shield: License](#shield-license)
+- [🛡️ License](#️-license)
 
-## :sunny: Introduction
+## ☀️ Introduction
 
 ElementID is an ID management tool for your frontend Nodejs (Javascript or Typescript) projects. You can share ID values between different modules using ElementID without any conflict. ElementID is a dev dependency. It provides unique or custom values to your production build according to the input IDs. ElementID has a caching system that helps to make ID values static.
 
-## :fire: Features
+## 🔥 Features
 
 - :crossed_swords: No ID conflicts
 - :tada: Zero dependencies in production
@@ -49,7 +49,7 @@ ElementID is an ID management tool for your frontend Nodejs (Javascript or Types
 - :computer: Powerful CLI tool
 - :scroll: Simple input configuration with .toml
 
-## :rocket: Getting Started
+## 🚀 Getting Started
 
 ### Installation
 
@@ -111,7 +111,7 @@ const yellowBtn = document.getElementById(ids.blueBtnId);
 const redBtn = document.querySelector(`#${ids.redBtnId}`);
 ```
 
-## :computer: Command-line
+## 💻 Command-line
 
 ```
 Usage: elementid <input file> [options]
@@ -130,7 +130,7 @@ Examples:
   elementid src/my_ids.js --watch       Uses the watch option
 ```
 
-## :rainbow: Use Cases
+## 🌈 Use Cases
 
 ### Astro
 
@@ -176,6 +176,6 @@ If you want to open an issue, create a Pull Request, or simply want to know how 
   <img src="https://contrib.rocks/image?repo=appzic/elementid" />
 </a>
 
-## :shield: License
+## 🛡️ License
 
 ElementID is [MIT](https://github.com/appzic/elementid/blob/main/LICENSE) licensed.
