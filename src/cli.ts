@@ -2,7 +2,6 @@
 
 import * as yargs from "yargs";
 import MakeIds from "./index";
-import { number } from "yargs";
 
 const lengthItems: Array<number> = [5, 6, 7, 8, 9, 10];
 
