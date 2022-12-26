@@ -17,7 +17,7 @@
     </p>
 </p>
 
-## Table of Contents
+## :book: Table of Contents
 
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
@@ -48,7 +48,7 @@ ElementID is an ID management tool for your frontend Nodejs (Javascript or Types
 - :computer: Powerful CLI tool
 - :scroll: Simple input configuration with .toml
 
-## Getting Started
+## :rocket: Getting Started
 
 ### Installation
 
@@ -110,7 +110,7 @@ const yellowBtn = document.getElementById(ids.blueBtnId);
 const redBtn = document.querySelector(`#${ids.redBtnId}`);
 ```
 
-## Command-line
+## :computer: Command-line
 
 ```
 Usage: elementid <input file> [options]
@@ -175,6 +175,6 @@ If you want to open an issue, create a Pull Request, or simply want to know how 
   <img src="https://contrib.rocks/image?repo=appzic/elementid" />
 </a>
 
-## License
+## :shield: License
 
 ElementID is [MIT](https://github.com/appzic/elementid/blob/main/LICENSE) licensed.
