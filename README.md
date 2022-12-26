@@ -11,7 +11,7 @@
         <a href="https://www.npmjs.com/package/elementid">
             <img alt="npm" src="https://img.shields.io/npm/dw/elementid">
         </a>
-        <a href="https://github.com/appzic/elementid/LICENSE">
+        <a href="https://github.com/appzic/elementid/blob/main/LICENSE">
             <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid">
         </a>
     </p>
