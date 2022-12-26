@@ -19,19 +19,20 @@
 
 ## :book: Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
+- [:book: Table of Contents](#book-table-of-contents)
+- [:sunny: Introduction](#sunny-introduction)
+- [:fire: Features](#fire-features)
+- [:rocket: Getting Started](#rocket-getting-started)
   - [Installation](#installation)
-  - [Create TOML File](#create-toml-file)
+  - [Create TOML file](#create-toml-file)
   - [Generate IDs](#generate-ids)
   - [Implement IDs](#implement-ids)
-- [Command-line](#command-line)
-- [Use Cases](#use-cases)
+- [:computer: Command-line](#computer-command-line)
+- [:rainbow: Use Cases](#rainbow-use-cases)
   - [Astro](#astro)
-- [Contributing](#contributing)
-- [License](#license)
+- [🙏 Contributing](#-contributing)
+- [❤️ Contributors](#️-contributors)
+- [:shield: License](#shield-license)
 
 ## :sunny: Introduction
 
@@ -90,7 +91,7 @@ Please read the [command line section](#command-line) for more CLI options.
 
 ### Implement IDs
 
-The ElementID generates Javascript(.js) and type declaration(.d.ts) files in the `node_modeules/elementid/dist/` directory. 
+The ElementID generates Javascript(.js) and type declaration(.d.ts) files in the `node_modeules/elementid/dist/` directory.
 
 Usage example:
 
@@ -129,7 +130,7 @@ Examples:
   elementid src/my_ids.js --watch       Uses the watch option
 ```
 
-## :magic_wand: Use Cases
+## :rainbow: Use Cases
 
 ### Astro
 
