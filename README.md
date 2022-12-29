@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209457262-c83c8970-6641-40c1-9579-fc6ab4736397.png"/>
+    <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209996476-a9a98d77-fd7f-4e5e-972c-e2dd6089dc2b.png"/>
     <b align="center">Smart way to manage IDs for frontend Javascript and Typescript projects.</b>
     <p align="center" style="align: center;">
         <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
