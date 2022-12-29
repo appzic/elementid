@@ -1,6 +1,6 @@
 <p align="center">
     <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209996476-a9a98d77-fd7f-4e5e-972c-e2dd6089dc2b.png"/>
-    <b align="center">Smart way to manage IDs for frontend Javascript and Typescript projects.</b>
+    <b align="center">ElementID - Smart way to manage IDs for frontend Javascript and Typescript projects.</b>
     <p align="center" style="align: center;">
         <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
             <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
