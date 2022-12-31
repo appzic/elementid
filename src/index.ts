@@ -131,7 +131,7 @@ class MakeIds {
 
 	private makeOutputIndexFile(outputs: Array<Output>): void {
 		const content: string = `${outputs
-			.map((item) => `export const ${item.key} = "${item.outputValue}";`)
+			.map((item) => `exports.${item.key} = "${item.outputValue}";`)
 			.join("\n")}`;
 		writeFile(this._outputIndexPath, content);
 	}
