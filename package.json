@@ -1,6 +1,6 @@
 {
 	"name": "elementid",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Smart way to manage IDs for frontend Javascript and Typescript projects",
 	"main": "dist/index.js",
 	"bin": {
