@@ -17,7 +17,7 @@
     </p>
 </p>
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [📖 Table of Contents](#-table-of-contents)
 - [☀️ Introduction](#️-introduction)
@@ -34,11 +34,11 @@
 - [❤️ Contributors](#️-contributors)
 - [🛡️ License](#️-license)
 
-## ☀️ Introduction
+## Introduction
 
 ElementID is an ID management tool for your frontend Nodejs (Javascript or Typescript) projects. You can share ID values between different modules using ElementID without any conflict. ElementID is a dev dependency. It provides unique or custom values to your production build according to the input IDs. ElementID has a caching system that helps to make ID values static.
 
-## 🔥 Features
+## Features
 
 - :crossed_swords: No ID conflicts
 - :tada: Zero dependencies in production
@@ -49,7 +49,7 @@ ElementID is an ID management tool for your frontend Nodejs (Javascript or Types
 - :computer: Powerful CLI tool
 - :scroll: Simple input configuration with .toml
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Installation
 
@@ -111,7 +111,7 @@ const yellowBtn = document.getElementById(ids.blueBtnId);
 const redBtn = document.querySelector(`#${ids.redBtnId}`);
 ```
 
-## 💻 Command-line
+## Command-line
 
 ```
 Usage: elementid <input file> [options]
@@ -130,7 +130,7 @@ Examples:
   elementid src/my_ids.js --watch       Uses the watch option
 ```
 
-## 🌈 Use Cases
+## Use Cases
 
 ### Astro
 
@@ -166,16 +166,16 @@ import { myBtnId } from "elementid";
 </script>
 ```
 
-## 🙏 Contributing
+## Contributing
 
 If you want to open an issue, create a Pull Request, or simply want to know how you can run it on your local machine, please read the [Contributing Guide](https://github.com/appzic/elementid/blob/main/CONTRIBUTING.md).
 
-## ❤️ Contributors
+## Contributors
 
 <a href="https://github.com/appzic/elementid/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=appzic/elementid" />
 </a>
 
-## 🛡️ License
+## License
 
 ElementID is [MIT](https://github.com/appzic/elementid/blob/main/LICENSE) licensed.
