@@ -1,29 +1,33 @@
 #!/usr/bin/env node
 
 import * as yargs from "yargs";
-import MakeIds from "./index";
+import * as C from "./constents";
+import MakeIds from "./run";
 
 const lengthItems: Array<number> = [5, 6, 7, 8, 9, 10];
 
 const yarg = yargs
 	.usage(
-		"Create unique, non-conflict and shareable ids based on input file .\nUsage: $0 <input file> [options]"
+		"Create unique, non-conflict and shareable ids based on input file .\nUsage: $0 [options]"
 	)
-	.example("$0 ids.js", "with the input file")
-	.example("$0 ids.js --length=7", "with the input file and length option")
-	.example("$0 src/my_ids.js --watch", "with the input file and watch option")
+	.example("$0", "Build element ids")
+	.example("$0 --length=7", "Build element ids with length option")
+	.example("$0 --watch", "Build element ids in development mode")
+	.string("i")
+	.alias("i", "input")
+	.describe("i", `Input file path\n(default = ${C.DEFAULT_INPUT_FILE})`)
+	.boolean("w")
 	.alias("w", "watch")
 	.describe("w", "Watch changes of input file")
-	.boolean("w")
 	.alias("f", "force")
 	.describe("f", "Generate unique ids without cacheing")
 	.boolean("f")
 	.alias("l", "length")
 	.describe(
 		"l",
-		`Length of the unique id values\n(default = 8, options = ${lengthItems.join(
-			", "
-		)})`
+		`Length of the unique id values\n(default = ${
+			C.DEFAULT_ID_LENGTH
+		}, options = ${lengthItems.join(", ")})`
 	)
 	.number("l")
 	.alias("h", "help")
@@ -34,15 +38,6 @@ main();
 async function main(): Promise<void> {
 	const argv = yarg.argv;
 
-	// get input file path
-	let inputFilePath: string;
-	if (argv._ && argv._[0]) {
-		inputFilePath = argv._[0] as string;
-	} else {
-		yarg.showHelp();
-		return;
-	}
-
 	// check length
 	const length = argv.l;
 	if (typeof length === "number") {
@@ -52,11 +47,13 @@ async function main(): Promise<void> {
 		}
 	}
 
-	const makeIds = new MakeIds({
-		inputFilePath,
+	const config: Config = {
+		inputFilePath: typeof argv.i === "string" ? argv.i : C.DEFAULT_INPUT_FILE,
 		isWatch: argv.w !== undefined,
 		isForce: argv.f !== undefined,
-		length: length === undefined ? 8 : length,
-	});
-	await makeIds.start();
+		length: typeof argv.l === "number" ? argv.l : C.DEFAULT_ID_LENGTH,
+	};
+
+	const makeIds = new MakeIds(config);
+	makeIds.start();
 }

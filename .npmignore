@@ -2,8 +2,7 @@
 *
 
 # include these:
-!/lib/**/*
-!/dist/**/*
+!/dist/*
 !LICENSE
 !README.md
 
