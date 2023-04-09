@@ -4,3 +4,6 @@ node_modules/
 # outputs
 lib/
 dist/
+
+# packpackage
+elementid-*.tgz
