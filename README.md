@@ -1,20 +1,23 @@
 <p align="center">
-    <img alt="elementid-logo" src="https://user-images.githubusercontent.com/64678612/209996908-283f7041-a705-4bf3-948a-e11681502a3a.png"/>
-    <b align="center">ElementID - Smart way to manage IDs for frontend Javascript and Typescript projects.</b>
-    <p align="center" style="align: center;">
-        <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
-            <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
-        </a>
-        <a href="https://www.npmjs.com/package/elementid">
-            <img alt="npm" src="https://img.shields.io/npm/v/elementid">
-        </a>
-        <a href="https://www.npmjs.com/package/elementid">
-            <img alt="npm" src="https://img.shields.io/npm/dw/elementid">
-        </a>
-        <a href="https://github.com/appzic/elementid/blob/main/LICENSE">
-            <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid">
-        </a>
-    </p>
+    <img alt="elementid-logo" src="./logo/elementid_logo.jpg"/>
+</p>
+<h1 align="center">ElementID</h1>
+<p align="center">
+    <b>Smart way to manage IDs for frontend Javascript and Typescript projects.</b>
+</p>
+<p align="center" style="align: center;">
+    <a href="https://github.com/appzic/elementid/blob/main/.github/workflows/main.yml">
+        <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/appzic/elementid/main.yml">
+    </a>
+    <a href="https://www.npmjs.com/package/elementid">
+        <img alt="npm" src="https://img.shields.io/npm/v/elementid">
+    </a>
+    <a href="https://www.npmjs.com/package/elementid">
+        <img alt="npm" src="https://img.shields.io/npm/dw/elementid">
+    </a>
+    <a href="https://github.com/appzic/elementid/blob/main/LICENSE">
+        <img alt="GitHub" src="https://img.shields.io/github/license/appzic/elementid">
+    </a>
 </p>
 
 ## Table of Contents
