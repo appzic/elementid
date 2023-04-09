@@ -24,7 +24,8 @@
             "extensions": [
                 "christian-kohler.path-intellisense",
                 "ms-vscode.vscode-typescript-next",
-                "esbenp.prettier-vscode"
+                "esbenp.prettier-vscode",
+                "astro-build.astro-vscode"
             ]
         }
     },
