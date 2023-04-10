@@ -25,7 +25,8 @@
                 "christian-kohler.path-intellisense",
                 "ms-vscode.vscode-typescript-next",
                 "esbenp.prettier-vscode",
-                "astro-build.astro-vscode"
+                "astro-build.astro-vscode",
+                "tamasfe.even-better-toml"
             ]
         }
     },
