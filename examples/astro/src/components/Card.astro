@@ -1,0 +1,36 @@
+---
+import { redBtn, greenBtn, blueBtn, display } from "../../elementid";
+import "./styles.css";
+---
+
+<div class="container">
+	<div class="wrapper">
+		<div id={display} class="dis"></div>
+		<div class="btn-group">
+			<button id={redBtn} class="red">Red</button>
+			<button id={greenBtn} class="green">Green</button>
+			<button id={blueBtn} class="blue">Blue</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	import { redBtn, greenBtn, blueBtn, display } from "../../elementid";
+
+	const displayEle = document.getElementById(display);
+
+	const btnRed = document.getElementById(redBtn);
+	btnRed.addEventListener("click", () => {
+		displayEle.style.backgroundColor = "Red";
+	});
+
+	const btnGreen = document.getElementById(greenBtn);
+	btnGreen.addEventListener("click", () => {
+		displayEle.style.backgroundColor = "Green";
+	});
+
+	const btnBlue = document.getElementById(blueBtn);
+	btnBlue.addEventListener("click", () => {
+		displayEle.style.backgroundColor = "Blue";
+	});
+</script>

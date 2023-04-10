@@ -1,0 +1,4 @@
+redBtn = ""
+greenBtn = ""
+blueBtn = "my_custom_btn_id" # <-- this is custom id
+display = ""

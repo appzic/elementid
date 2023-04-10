@@ -1,0 +1,57 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.dis{
+    width: 700px;
+    height: 300px;
+    background-color: rgb(202, 202, 202);
+    background-image: url("/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.btn-group{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button{
+    border:none;
+    background-color: inherit;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    padding: 10px 60px;
+    border-radius: 15px;
+}
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red:hover{
+    background-color: rgb(156, 2, 2);
+}
+
+.green:hover{
+    background-color: rgb(1, 80, 1);
+}
+
+.blue:hover{
+    background-color: rgb(1, 1, 124);
+}

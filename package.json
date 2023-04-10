@@ -4,7 +4,7 @@
 	"description": "Smart way to manage IDs for frontend Javascript and Typescript projects",
 	"main": "dist/index.js",
 	"bin": {
-		"elementid": "lib/cli.js"
+		"elementid": "dist/cli.js"
 	},
 	"repository": {
 		"type": "git",
@@ -13,8 +13,9 @@
 	"scripts": {
 		"dev": "tsc --watch",
 		"build": "npm run clean && tsc",
-		"clean": "rimraf ./dist",
-		"format": "prettier --write ."
+		"clean": "rimraf ./dist elementid-*.tgz",
+		"format": "prettier --write .",
+		"example:astro": "sh examples.sh astro"
 	},
 	"keywords": [
 		"javascript ",
