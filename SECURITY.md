@@ -27,5 +27,3 @@ We encourage everyone who uses our project to follow security best practices to 
 ## Contact
 
 If you have any questions about our security policy, please contact us at support@appzic.com.
-
-You can modify this template to fit the specific needs of your project. Once you have created your SECURITY.md file, make sure to add it to the root of your project repository and include it in your README.md file, so that users can easily find and access it.
